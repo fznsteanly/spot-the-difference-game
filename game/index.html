@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot It! — Twin Picture Hunt</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <span id="gameTitle">SPOT IT!</span>
+      <span id="roundName">Round 1 · Sunny Park</span>
+    </div>
+    <div class="hud-mid">
+      <span id="counter" class="pill">Found 0 / 7 · 7 left</span>
+      <div id="timerWrap" title="Time left">
+        <div id="timerBar"></div>
+        <span id="timerText">2:30</span>
+      </div>
+    </div>
+    <div class="hud-right">
+      <span id="score" class="pill">Score 0</span>
+      <button id="hintBtn" type="button">Hint (H) · 3 left</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <canvas id="gameCanvas" width="1160" height="420"></canvas>
+    <div id="panelLabels"><span>Picture A</span><span>Picture B</span></div>
+    <p id="statusMsg">Click a difference in either picture — the same spot counts on both sides.</p>
+  </main>
+
+  <section id="titleScreen" class="overlay">
+    <div class="card">
+      <h1>SPOT IT!</h1>
+      <p class="tagline">Twin Picture Hunt</p>
+      <p class="blurb">Two pictures, nearly identical. Hunt every hidden difference
+        before the clock runs out — three scenes, rising difficulty, and a
+        sharper eye wins more points.</p>
+      <ul class="howto">
+        <li>Click (or tap) a difference in either picture.</li>
+        <li>A wrong click costs 5 seconds and 10 points.</li>
+        <li>Press <b>H</b> for a hint — hints are limited.</li>
+        <li>Finish a round fast for a time bonus.</li>
+      </ul>
+      <button id="startBtn" type="button">Start hunting</button>
+      <p class="foot">3 rounds · 25 differences · original art, drawn in code</p>
+    </div>
+  </section>
+
+  <section id="roundScreen" class="overlay hidden">
+    <div class="card">
+      <h2 id="roundHeading">Round complete!</h2>
+      <p id="roundSummary"></p>
+      <p id="roundStars" class="stars"></p>
+      <button id="nextBtn" type="button">Next round</button>
+    </div>
+  </section>
+
+  <section id="resultsScreen" class="overlay hidden">
+    <div class="card">
+      <h2>All differences found!</h2>
+      <p id="finalScore" class="bigscore"></p>
+      <p id="finalDetail"></p>
+      <p id="finalStars" class="stars"></p>
+      <button id="againBtn" type="button">Play again</button>
+    </div>
+  </section>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Spot It! — Twin Picture Hunt. Warm paper, ink and gold: a cosy puzzle-book look. */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f3ead3;
+  color: #2b2118;
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+}
+#app { width: 1220px; margin: 0 auto; padding: 14px 20px 24px; }
+#hud {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff8e7; border: 2px solid #2b2118; border-radius: 12px;
+  padding: 8px 14px; box-shadow: 3px 3px 0 #2b2118;
+}
+#gameTitle { font-size: 28px; font-weight: 900; letter-spacing: 1px; color: #c2410c; }
+#roundName { font-size: 15px; font-weight: 700; margin-left: 10px; color: #6b4f2a; }
+.hud-mid { display: flex; align-items: center; gap: 14px; }
+.pill {
+  background: #2b2118; color: #ffe9b0; border-radius: 999px;
+  padding: 6px 14px; font-size: 15px; font-weight: 700; white-space: nowrap;
+}
+#timerWrap {
+  position: relative; width: 190px; height: 30px; overflow: hidden;
+  border: 2px solid #2b2118; border-radius: 999px; background: #fff;
+}
+#timerBar { position: absolute; inset: 0; background: #4ade80; width: 100%; }
+#timerBar.low { background: #f87171; }
+#timerText {
+  position: relative; z-index: 1; display: block; text-align: center;
+  line-height: 27px; font-weight: 900; font-size: 16px;
+}
+.hud-right { display: flex; align-items: center; gap: 10px; }
+button {
+  font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer;
+  background: #fbbf24; color: #2b2118; border: 2px solid #2b2118; border-radius: 10px;
+  padding: 8px 16px; box-shadow: 2px 2px 0 #2b2118;
+}
+button:hover { background: #f59e0b; }
+button:active { transform: translate(2px, 2px); box-shadow: none; }
+button:disabled { opacity: 0.45; cursor: default; }
+#stage { margin-top: 14px; text-align: center; }
+#gameCanvas {
+  display: block; margin: 0 auto; border: 3px solid #2b2118; border-radius: 14px;
+  background: #fffdf5; box-shadow: 5px 5px 0 #2b2118; cursor: crosshair;
+  max-width: 100%; height: auto;
+}
+#panelLabels {
+  display: flex; justify-content: space-between; width: 1160px; max-width: 100%;
+  margin: 6px auto 0; padding: 0 230px; font-weight: 800; color: #6b4f2a; font-size: 14px;
+}
+#statusMsg { font-size: 15px; font-weight: 700; color: #6b4f2a; margin: 8px 0 0; min-height: 20px; }
+.overlay {
+  position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center;
+  background: rgba(43, 33, 24, 0.55);
+}
+.overlay.hidden { display: none; }
+.card {
+  width: 560px; max-width: 92vw; background: #fff8e7; border: 3px solid #2b2118;
+  border-radius: 16px; box-shadow: 6px 6px 0 #2b2118; padding: 28px 34px; text-align: center;
+}
+.card h1 { font-size: 56px; margin: 0; letter-spacing: 2px; color: #c2410c; }
+.card h2 { font-size: 32px; margin: 0 0 8px; }
+.tagline { font-size: 20px; font-weight: 800; margin: 2px 0 12px; color: #6b4f2a; }
+.blurb { font-size: 16px; line-height: 1.5; margin: 0 0 14px; }
+.howto { text-align: left; font-size: 15px; line-height: 1.7; margin: 0 auto 18px; width: fit-content; }
+.card button { font-size: 19px; padding: 12px 28px; }
+.foot { font-size: 13px; color: #8a6d4b; margin: 16px 0 0; }
+.bigscore { font-size: 30px; font-weight: 900; color: #c2410c; margin: 6px 0; }
+.stars { font-size: 34px; letter-spacing: 6px; margin: 8px 0 14px; color: #f59e0b; }
+#roundSummary, #finalDetail { font-size: 16px; line-height: 1.5; }
